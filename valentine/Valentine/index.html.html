@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>For Chinnu ❤️</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(135deg, #ff758c, #ff7eb3);
+      color: #fff;
+      text-align: center;
+      overflow-x: hidden;
+    }
+
+    section {
+      padding: 25px 15px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    h1, h2 {
+      margin-bottom: 10px;
+      text-align: center;
+      animation: fadeInDown 1s ease;
+    }
+
+    .card {
+      background: rgba(255,255,255,0.95);
+      color: #333;
+      border-radius: 20px;
+      padding: 18px;
+      max-width: 850px;
+      width: 100%;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+      animation: fadeInUp 1s ease;
+      text-align: center;
+    }
+
+    .btn {
+      background: #ff4d6d;
+      color: white;
+      border: none;
+      padding: 10px 24px;
+      border-radius: 30px;
+      font-size: 1em;
+      cursor: pointer;
+      margin: 10px auto;
+      transition: 0.3s;
+      display: block;
+    }
+
+    .btn:hover {
+      background: #e63950;
+      transform: scale(1.1);
+    }
+
+    .photo-row {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 10px;
+    }
+
+    .photo-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 160px;
+    }
+
+    .photo-cover {
+      font-size: 40px;
+      cursor: pointer;
+      margin: 6px 0;
+      transition: transform 0.3s ease;
+      display: inline-block;
+      animation: bounce 2s infinite;
+    }
+
+    .photo-cover:hover {
+      transform: scale(1.3);
+    }
+
+    .photo-box {
+      display: none;
+      margin-top: 6px;
+      animation: zoomIn 0.6s ease;
+    }
+
+    .photo-box img {
+      width: 100%;
+      border-radius: 12px;
+      box-shadow: 0 5px 14px rgba(0,0,0,0.3);
+    }
+
+    .memory-text {
+      margin-top: 4px;
+      font-weight: bold;
+      color: #fff8dc;
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.4);
+      font-size: 0.85em;
+      text-align: center;
+      animation: fadeIn 1s ease;
+    }
+
+    footer {
+      margin-top: 18px;
+      font-size: 1.2em;
+      color: #ffffff;
+      font-weight: bold;
+      text-align: center;
+      animation: fadeInUp 1s ease;
+    }
+
+    .bow {
+      font-size: 56px;
+      cursor: pointer;
+      margin-bottom: 6px;
+      transition: transform 0.3s ease;
+      display: inline-block;
+      animation: bounce 1.8s infinite;
+    }
+
+    .bow:hover {
+      transform: scale(1.2) rotate(-5deg);
+    }
+
+    .letter-text {
+      display: none;
+      margin-top: 12px;
+      text-align: center;
+      line-height: 1.7;
+      animation: slideDown 0.8s ease;
+      font-size: 1em;
+    }
+
+    .letter-text p {
+      margin-bottom: 12px;
+      animation: fadeIn 1s ease;
+    }
+
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(25px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-15px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes slideDown {
+      from { opacity: 0; transform: translateY(-12px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-6px); }
+    }
+
+    @keyframes zoomIn {
+      from { transform: scale(0.7); opacity: 0; }
+      to { transform: scale(1); opacity: 1; }
+    }
+
+    .heart {
+      position: fixed;
+      bottom: -20px;
+      color: #fff;
+      font-size: 18px;
+      animation: floatUp 4s linear infinite;
+      opacity: 0.7;
+      z-index: 0;
+    }
+
+    @keyframes floatUp {
+      from { transform: translateY(0) scale(1); opacity: 0.7; }
+      to { transform: translateY(-120vh) scale(1.3); opacity: 0; }
+    }
+
+    .confetti {
+      position: fixed;
+      top: -10px;
+      width: 9px;
+      height: 12px;
+      opacity: 0.9;
+      animation: fall 3s linear forwards;
+      z-index: 9999;
+    }
+
+    @keyframes fall {
+      to {
+        transform: translateY(120vh) rotate(360deg);
+        opacity: 0;
+      }
+    }
+
+    /* VIDEO STYLES */
+    .video-section {
+      margin-top: 25px;
+      text-align: center;
+    }
+
+    .video-cover {
+      font-size: 52px;
+      cursor: pointer;
+      animation: bounce 2s infinite;
+      display: inline-block;
+      margin-bottom: 6px;
+    }
+
+    .video-title {
+      font-size: 1.3em;
+      font-weight: bold;
+      margin-bottom: 10px;
+      animation: fadeInDown 1s ease;
+    }
+
+    .video-wrapper {
+      display: none;
+      width: 100%;
+      max-width: 420px;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 8px 22px rgba(0,0,0,0.4);
+      margin: 0 auto;
+      animation: zoomIn 0.7s ease;
+      background: black;
+    }
+
+    .video-wrapper video {
+      width: 100%;
+      height: 240px;
+      object-fit: cover; /* removes black bars */
+      border-radius: 20px;
+      display: block;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- BACKGROUND SONG -->
+  <audio id="loveSong" preload="auto">
+    <source src="song.mp4" type="audio/mp4">
+    Your browser does not support the audio element.
+  </audio>
+
+  <!-- COVER + VALENTINE QUESTION -->
+  <section>
+    <h1>Chinnu ❤️</h1>
+    <div class="card">
+      <h2>Will you be my Valentine? 💘</h2>
+      <button class="btn" onclick="yesClicked()">Yes 💖</button>
+      <button class="btn" onclick="alert('Oops 😜 You can’t say no… try Yes 💖')">No 🙈</button>
+    </div>
+  </section>
+
+  <!-- LETTER SECTION -->
+  <section>
+    <h1>Dear Chinnu ❤️</h1>
+    <div class="card">
+      <div class="bow" onclick="openLetter()">🎀</div>
+      <p><em>Tap the bow to open my letter 💌</em></p>
+
+      <div id="letterText" class="letter-text">
+
+        <p><strong>Dear Chinnu</strong></p>
+
+        <p>Hii cutieamma nenu ni ammu gurthunanaa gurthuntaa le antha easy ga marchipoyaa person ni kadhu anukuntunaa 2022 nunchi 2025 dhaka kalisi nitho travel chesina ammayi ni ippudu 2026 loki vacham ilaneee life antha nitho travel cheyaliii.</p>
+
+        <p>Sare 2022 nunchi 2025 dhaka valentines day ayithe edhoo edhoo jarigipoindhiii kaniii nitho gadipinaa haa 3 years matram apatiki marchipolenuuu anadhariki btech life boring antaruu kaniiii, na Btech life matram chala miracle surprises jarigayiii ni valaa nenu appudu intii nunchii bayatakii raledhu alantii nitho bike rides beach nights food streets ilaa chala unayiii.</p>
+
+        <p>The sudden change 2025 lo big dissaster na life nv punjab veladam edhooo weight heavy ayipoindhii heart godavaluu misunderstandings thoo ayipoindhiii. Finally 2026 jan 8 oka big celebration day laga undhi naku Aaa roju ndhuku antavaa nv vachav babu haa roju Aa airport lo ninnu chusina moment na hands legs shiver full sweat ayipoindhiii ndhukoo thelidhuuu nijam chepali ante thanu na chinnu ey naa anipinchindhiii.</p>
+
+        <p>Nenu antha shock lo unna atlast room ki velakaa na chinnu ni chusaysaaa chala kaburuluu memories tisukoniiii checkout ayipoyaaa chalu Ee..moments naku Eee life next year nv natho lekunaa unaa chala chusaa nithoo edhina chance untee ninnu pelli chesukoniii na future nitho chudali ani undhii, oka chance isthavaa life antha heart lo petukonii chusukuntaa ninnu.</p>
+
+        <p style="font-size:1.3em; font-weight:bold; color:#ff4d6d;">
+          Will U Be My Valentine??? 💍🌹
+        </p>
+
+        <p style="font-size:1.5em; font-weight:bold; color:#ff006e;">
+          I Love You ❤️✨
+        </p>
+
+        <p>Premathooo ni ammu untaa mari inkaa jagarthaa Ee.. ammu ni marchipoku adhee velimudhraa dhanii ok naa byee nanna inkaa scroll chestheee after letter mana memories untayii chala untayi kanii koniii petta anii heart lo dhachukunaa leeeee sare mari inkaaa ................</p>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- MEMORIES SECTION -->
+  <section>
+    <h2>Our Beautiful Memories 💞</h2>
+    <div class="card">
+
+      <div class="photo-row">
+
+        <div class="photo-item">
+          <div class="photo-cover" onclick="togglePhoto('p1')">🎀</div>
+          <div id="p1" class="photo-box">
+            <img src="photo1.jpeg" alt="Our first adventure together - what a day!">
+            <p class="memory-text">Our first adventure together - what a day!</p>
+          </div>
+        </div>
+
+        <div class="photo-item">
+          <div class="photo-cover" onclick="togglePhoto('p2')">💘</div>
+          <div id="p2" class="photo-box">
+            <img src="photo2.jpeg" alt="That time we laughed until our stomachs hurt">
+            <p class="memory-text">That time we laughed until our stomachs hurt</p>
+          </div>
+        </div>
+
+        <div class="photo-item">
+          <div class="photo-cover" onclick="togglePhoto('p3')">😘</div>
+          <div id="p3" class="photo-box">
+            <img src="photo3.jpeg" alt="The moment I knew you were special">
+            <p class="memory-text">The moment I knew you were special</p>
+          </div>
+        </div>
+
+        <div class="photo-item">
+          <div class="photo-cover" onclick="togglePhoto('p4')">🖤</div>
+          <div id="p4" class="photo-box">
+            <img src="photo4.jpeg" alt="Creating beautiful memories together">
+            <p class="memory-text">Creating beautiful memories together</p>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- VIDEO SECTION -->
+      <div class="video-section">
+        <div class="video-title">Cute Moments 💕</div>
+        <div class="video-cover" onclick="toggleVideo()">✉️</div>
+
+        <div id="videoBox" class="video-wrapper">
+          <video id="cuteVideo" playsinline>
+            <source src="video.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <footer>
+    Forever yours,<br>Ammu 💖
+  </footer>
+
+  <script>
+    const song = document.getElementById("loveSong");
+    const video = document.getElementById("cuteVideo");
+
+    function openLetter() {
+      const letter = document.getElementById("letterText");
+
+      if (letter.style.display === "block") {
+        letter.style.display = "none";
+        song.pause();
+      } else {
+        letter.style.display = "block";
+        song.play();
+        createHeartBurst();
+      }
+    }
+
+    function togglePhoto(id) {
+      const el = document.getElementById(id);
+      el.style.display = el.style.display === "block" ? "none" : "block";
+    }
+
+    function toggleVideo() {
+      const videoBox = document.getElementById("videoBox");
+
+      if (videoBox.style.display === "block") {
+        videoBox.style.display = "none";
+        video.pause();
+        video.currentTime = 0;
+      } else {
+        videoBox.style.display = "block";
+        video.currentTime = 0;
+        video.play(); // ✅ auto play in center
+      }
+    }
+
+    function createHeart() {
+      const heart = document.createElement("div");
+      heart.className = "heart";
+      heart.innerHTML = "❤️";
+      heart.style.left = Math.random() * 100 + "vw";
+      heart.style.fontSize = Math.random() * 20 + 15 + "px";
+      heart.style.animationDuration = Math.random() * 2 + 3 + "s";
+      document.body.appendChild(heart);
+
+      setTimeout(() => {
+        heart.remove();
+      }, 4000);
+    }
+
+    setInterval(createHeart, 900);
+
+    function createHeartBurst() {
+      for (let i = 0; i < 15; i++) {
+        setTimeout(createHeart, i * 100);
+      }
+    }
+
+    function yesClicked() {
+      alert("Yay! 💖 I knew you would say yes!");
+      launchConfetti();
+    }
+
+    function launchConfetti() {
+      for (let i = 0; i < 80; i++) {
+        createConfetti();
+      }
+    }
+
+    function createConfetti() {
+      const confetti = document.createElement("div");
+      confetti.className = "confetti";
+      confetti.style.left = Math.random() * 100 + "vw";
+      confetti.style.backgroundColor = getRandomColor();
+      confetti.style.width = Math.random() * 8 + 6 + "px";
+      confetti.style.height = Math.random() * 12 + 8 + "px";
+      confetti.style.animationDuration = Math.random() * 2 + 2 + "s";
+      document.body.appendChild(confetti);
+
+      setTimeout(() => {
+        confetti.remove();
+      }, 4000);
+    }
+
+    function getRandomColor() {
+      const colors = ["#ff4d6d", "#ffb703", "#ffd6e0", "#ffffff", "#ff758c"];
+      return colors[Math.floor(Math.random() * colors.length)];
+    }
+  </script>
+
+</body>
+</html>
